@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Organizer Suite</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Organizer Suite</h1>
+<!-- To-Do List Section -->
+<!-- To-Do List Section -->
+<section id="todo-list">
+    <h2>To-Do List</h2>
+    <input type="text" id="new-task" placeholder="Enter a new task">
+    <textarea id="task-desc" placeholder="Enter task description"></textarea>
+    <label for="priority">Priority:</label>
+    <select id="priority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+    </select>
+    <label for="due-date">Due Date:</label>
+    <input type="date" id="due-date">
+    <button onclick="addTask()">Add Task</button>
+
+    <label for="sort-options">Sort By:</label>
+    <select id="sort-options" onchange="sortTasks()">
+        <option value="date">Due Date</option>
+        <option value="priority">Priority</option>
+    </select>
+    
+    <ul id="tasks"></ul>
+</section>
+<!-- Calculator Section -->
+        <section id="calculator">
+            <h2>Calculator</h2>
+            <input type="text" id="calc-display" disabled>
+            <div id="buttons">
+                <button onclick="appendCalc('7')">7</button>
+                <button onclick="appendCalc('8')">8</button>
+                <button onclick="appendCalc('9')">9</button>
+                <button onclick="clearCalc()">C</button>
+                <button onclick="appendCalc('4')">4</button>
+                <button onclick="appendCalc('5')">5</button>
+                <button onclick="appendCalc('6')">6</button>
+                <button onclick="appendCalc('+')">+</button>
+                <button onclick="appendCalc('1')">1</button>
+                <button onclick="appendCalc('2')">2</button>
+                <button onclick="appendCalc('3')">3</button>
+                <button onclick="appendCalc('-')">-</button>
+                <button onclick="appendCalc('0')">0</button>
+                <button onclick="appendCalc('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendCalc('*')">*</button>
+                <button onclick="appendCalc('/')">/</button>
+            </div>
+        </section>
+
+<!-- Image Gallery Section -->
+<section id="image-gallery">
+    <h2>Image Gallery</h2>
+    <input type="file" id="image-upload" accept="image/*" onchange="previewImage()">
+    <img id="image-preview" src="" alt="Image Preview" style="display: none;">
+    <input type="text" id="image-caption" placeholder="Enter caption">
+    <button onclick="addImage()">Add Image</button>
+
+    <label for="sort-options-gallery">Sort By:</label>
+    <select id="sort-options-gallery" onchange="sortImages()">
+        <option value="date">Upload Date</option>
+        <option value="caption">Caption</option>
+    </select>
+
+    <div id="gallery"></div>
+</section>
